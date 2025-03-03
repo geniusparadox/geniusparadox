@@ -11,67 +11,114 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #f4f4f4;
+            background-color: #F5F1E3; /* Soft Beige */
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
         }
 
-        /* Left Navigation Panel */
-        .sidebar {
-            width: 250px;
-            background: #333;
+        /* Full-width Header */
+        header {
+            background: #B2C8BA; /* Pastel Sage Green */
             color: white;
-            height: 100vh;
-            padding-top: 20px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
             position: fixed;
             top: 0;
             left: 0;
+            z-index: 1000;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: #B2C8BA; /* Same as Header */
+            color: white;
+            height: 100vh;
+            padding-top: 80px; /* Space for Fixed Header */
+            position: fixed;
+            top: 0;
+            left: -250px; /* Hide initially */
+            transition: left 0.3s ease-in-out;
         }
 
         .sidebar a {
             display: block;
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             font-size: 1.1rem;
-            border-bottom: 1px solid #444;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .sidebar a:hover {
-            background: #555;
+            background: rgba(255, 255, 255, 0.2);
         }
 
-        /* Main Content Area */
+        /* Main Content */
         .content {
-            margin-left: 250px;
-            padding: 20px;
+            margin-left: 0;
+            padding: 100px 20px 60px;
             flex-grow: 1;
+            transition: margin-left 0.3s ease-in-out;
         }
 
-        /* Header with Pastel Sage Green */
-        header {
-            background: #B2BFA3; /* Pastel Sage Green */
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
+        /* Footer */
         footer {
-            background: #333;
+            background: #B2C8BA; /* Same as Header */
             color: white;
             padding: 10px;
             text-align: center;
+            width: 100%;
             position: fixed;
             bottom: 0;
-            left: 250px;
-            width: calc(100% - 250px);
+            left: 0;
+        }
+
+        /* Menu Button */
+        .menu-btn {
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
+        /* Show Sidebar */
+        .sidebar.active {
+            left: 0;
+        }
+
+        .content.active {
+            margin-left: 250px;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .sidebar {
+                left: 0; /* Show sidebar for larger screens */
+            }
+            .menu-btn {
+                display: none; /* Hide menu button on large screens */
+            }
+            .content {
+                margin-left: 250px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Left Sidebar with Links -->
+    <!-- Menu Button (Visible on Mobile) -->
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <!-- Sidebar -->
     <div class="sidebar">
         <a href="about.html">About Me</a>
         <a href="iso-2768.html">ISO 2768 Tolerances</a>
@@ -79,20 +126,30 @@
         <a href="m-codes.html">M Codes in CNC Turning</a>
     </div>
 
-    <!-- Main Content Area -->
+    <!-- Header -->
+    <header>
+        <h1>Welcome to geniusparadox</h1>
+    </header>
+
+    <!-- Main Content -->
     <div class="content">
-        <header>
-            <h1>geniusparadox</h1>
-        </header>
-
         <main>
-            <p>This is a digital dumpyard for everything I need/ want to say</p>
+            <p>This website now has a mobile-friendly layout with a collapsible sidebar.</p>
         </main>
-
-        <footer>
-            <p>&copy; 2025 geniusparadox. All Rights Reserved.</p>
-        </footer>
     </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 geniusparadox. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for Sidebar Toggle -->
+    <script>
+        function toggleMenu() {
+            document.querySelector('.sidebar').classList.toggle('active');
+            document.querySelector('.content').classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
