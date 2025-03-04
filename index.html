@@ -109,24 +109,38 @@
 
         /* Responsive Design */
         @media (max-width: 767px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                padding-top: 0;
-            }
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-top: 0;
+        text-align: center;
+    }
 
-            .content {
-                margin-left: 0;
-                padding: 100px 20px 60px;
-                align-items: center;
-            }
+    .sidebar a {
+        display: inline-block;
+        width: auto;
+        padding: 10px;
+        border-bottom: none;
+    }
 
-            header {
-                width: 100%;
-                left: 0;
-            }
-        }
+    .content {
+        margin-left: 0;
+        padding: 80px 20px 60px;
+        text-align: center;
+    }
+
+    header {
+        width: 100%;
+        left: 0;
+        text-align: center;
+    }
+
+    footer {
+        position: relative;
+        width: 100%;
+    }
+}
     </style>
 </head>
 <body>
