@@ -68,19 +68,29 @@
             text-align: center;
         }
 
-        table {
-            width: 100%;
-            background: #f9f9f9;
-            color: black;
-            border-collapse: collapse;
-            margin: 20px auto;
-        }
+        /* Responsive Table */
+table {
+    width: 100%;
+    max-width: 100%;
+    background-color: #f0eee5;
+    color: black;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block; /* Ensures scrolling works */
+    white-space: nowrap; /* Prevents text from wrapping */
+}
 
-        th, td {
-            border: 1px solid black;
-            padding: 10px;
-            text-align: center;
-        }
+th, td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Wrap the table inside a scrollable container */
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Enables horizontal scrolling on small screens */
+}
 
         footer {
             background: #f9f9f9;
@@ -141,7 +151,7 @@
     </header>
 
     <!-- Main Content -->
-    <div class="content">
+    <div class="table-container">
         <main>
             <p>Below is the complete list of G-Codes used in CNC machining.</p>
             <table>
