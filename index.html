@@ -11,7 +11,7 @@
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #F5F1E3; /* Soft Beige */
+            background-color: #D3D9D4; /* Soft Beige */
             margin: 0;
             padding: 0;
             display: flex;
@@ -20,7 +20,7 @@
 
         /* Full-width Header */
         header {
-            background: #B2C8BA; /* Pastel Sage Green */
+            background: #124e66; /* Pastel Sage Green */
             color: white;
             padding: 20px;
             text-align: center;
@@ -34,10 +34,10 @@
         /* Sidebar */
         .sidebar {
             width: 250px;
-            background: #B2C8BA; /* Same as Header */
-            color: white;
+            background: #D3D9D4; /* Same as Header */
+            color: black;
             height: 100vh;
-            padding-top: 80px; /* Adjust for fixed header */
+            padding-top: 120px; /* Adjust for fixed header */
             position: fixed;
             top: 0;
             left: -250px; /* Hide initially */
@@ -46,11 +46,11 @@
 
         .sidebar a {
             display: block;
-            color: white;
+            color: black;
             text-decoration: none;
             padding: 12px 20px;
             font-size: 1.1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            border-bottom: 1px solid black;
         }
 
         .sidebar a:hover {
@@ -68,7 +68,7 @@
 
         /* Footer */
         footer {
-            background: #B2C8BA; /* Same as Header */
+            background: #124e66; /* Same as Header */
             color: white;
             padding: 10px;
             text-align: center;
@@ -109,7 +109,12 @@
                 display: none; /* Hide menu button on large screens */
             }
             .content {
-                margin-left: 250px;
+                margin-left: 250px; /* ✅ Shift content to the right, avoiding sidebar */
+    padding: 120px 40px 60px; /* ✅ Adjust spacing */
+    flex-grow: 1;
+    transition: margin-left 0.3s ease-in-out;
+    text-align: left;
+    max-width: 800px; /* ✅ Prevents content from stretching too wide */
             }
         }
     </style>
