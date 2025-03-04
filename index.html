@@ -123,39 +123,42 @@
 
         /* Responsive Design */
         @media (max-width: 767px) {
-            .menu-toggle {
-                display: block;
-            }
+    .menu-toggle {
+        display: block;
+    }
 
-            .sidebar {
-                left: -250px; /* Hide sidebar by default */
-                width: 250px;
-                height: 100vh;
-                position: fixed;
-                top: 0;
-                background: #f9f9f9;
-                transition: left 0.3s ease-in-out;
-            }
+    .sidebar {
+        left: -250px; /* Hide sidebar by default */
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        background: #f9f9f9;
+        transition: left 0.3s ease-in-out;
+    }
 
-            .sidebar.show {
-                left: 0;
-            }
+    .sidebar.show {
+        left: 0;
+    }
 
-            .content {
-    margin-left: 250px;
-    padding: 160px 20px 60px; /* Increased top padding to 160px */
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    .content {
+        margin-left: 0;  /* Remove left margin */
+        padding: 140px 20px 60px; /* Adjust top padding */
+        text-align: center;
+        width: 100%;
+        display: block; /* Prevents flex issues */
+    }
+
+    main p {
+        max-width: 90%; /* Prevents the text from becoming too narrow */
+        margin: 0 auto; /* Centers the text properly */
+    }
+
+    header {
+        width: 100%;
+        left: 0;
+    }
 }
-
-            header {
-                width: 100%;
-                left: 0;
-            }
-        }
     </style>
 </head>
 <body>
