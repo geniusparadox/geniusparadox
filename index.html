@@ -26,14 +26,14 @@
             color: black;
             padding: 20px;
             text-align: center;
-            width: calc(100% - 250px); /* Adjust width after subtracting sidebar width */
+            width: calc(100% - 250px);
             position: fixed;
             top: 0;
-            left: 250px; /* Offset by sidebar width */
+            left: 250px;
             z-index: 1000;
         }
 
-        /* Sidebar */
+        /* Sidebar (default for desktop) */
         .sidebar {
             width: 250px;
             background: #f9f9f9;
@@ -43,6 +43,7 @@
             position: fixed;
             top: 0;
             left: 0;
+            transition: left 0.3s ease-in-out;
         }
 
         .sidebar a {
@@ -107,43 +108,60 @@
             text-align: left;
         }
 
+        /* Hamburger Menu Button */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+
         /* Responsive Design */
         @media (max-width: 767px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        padding-top: 10px;
-    }
+            .menu-toggle {
+                display: block;
+            }
 
-    .sidebar a {
-        display: inline-block;
-        width: auto;
-        padding: 10px;
-        border-bottom: none;
-    }
+            .sidebar {
+                left: -250px; /* Hide sidebar by default */
+                width: 250px;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                background: #f9f9f9;
+                transition: left 0.3s ease-in-out;
+            }
 
-    .content {
-        margin-left: 0;
-        padding: 80px 20px 60px;
-        text-align: center;
-    }
+            .sidebar.show {
+                left: 0;
+            }
 
-    header {
-        width: 100%;
-        left: 0;
-        text-align: center;
-    }
-}
+            .content {
+                margin-left: 0;
+                padding: 100px 20px 60px;
+                align-items: center;
+                text-align: center;
+            }
+
+            header {
+                width: 100%;
+                left: 0;
+            }
+        }
     </style>
 </head>
 <body>
     
+    <!-- Hamburger Menu Button -->
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+
     <!-- Sidebar -->
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <a href="index.html">Home</a>
         <a href="about.html">About Me</a>
         <a href="iso-2768.html">ISO 2768 Tolerances</a>
@@ -168,5 +186,13 @@
         <a href="index.html" class="back-home">Back to Home</a>
         <p>&copy; 2025 geniusparadox. All Rights Reserved.</p>
     </footer>
+
+    <!-- JavaScript for Menu -->
+    <script>
+        function toggleMenu() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.classList.toggle("show");
+        }
+    </script>
 </body>
 </html>
