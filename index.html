@@ -4,51 +4,159 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>geniusparadox</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <a href="index.html" class="site-title">geniusparadox</a>
-        <div class="nav-links">
-          <a href="blog.html">Blog</a>
-          <a href="about.html">About</a>
-        </div>
-      </nav>
+  <!-- Menu Bar -->
+  <div class="menubar">
+    <div class="menubar-left">
+      <span class="apple-logo"></span>
+      <span>geniusparadox</span>
     </div>
-  </header>
+    <div class="menubar-right">
+      <span id="clock"></span>
+    </div>
+  </div>
 
-  <main>
-    <div class="container">
-      <section class="hero">
+  <!-- Desktop -->
+  <div class="desktop">
+    <!-- About Window -->
+    <div class="window active" id="about-window">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <div class="traffic-light close" onclick="closeWindow('about-window')"></div>
+          <div class="traffic-light minimize"></div>
+          <div class="traffic-light maximize"></div>
+        </div>
+        <div class="window-title">About</div>
+      </div>
+      <div class="window-content">
         <h1>geniusparadox</h1>
-        <p>A space for thoughts, ideas, and everything in between.</p>
-        <div class="hero-links">
-          <a href="blog.html">Read the blog</a>
-          <a href="about.html">About me</a>
+        <p>Up in the air I am, down with the people.</p>
+        <p class="muted">Entrepreneur. Interests in humour, politics, coffee, cinema, F1, and cricket. @Purdue</p>
+      </div>
+    </div>
+
+    <!-- Projects Window -->
+    <div class="window" id="projects-window">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <div class="traffic-light close" onclick="closeWindow('projects-window')"></div>
+          <div class="traffic-light minimize"></div>
+          <div class="traffic-light maximize"></div>
         </div>
-      </section>
-
-      <section class="projects">
-        <h2 class="projects-title">Things I have created and am in the process of creating</h2>
-        <ul class="projects-list">
-          <li><a href="https://geniusparadox.github.io/metal-weight-calculator/" target="_blank">MachinistsTools</a></li>
-          <li><a href="https://mealmate.co" target="_blank">MealMate</a></li>
-          <li><a href="https://geniusparadox.github.io/gcodegen/" target="_blank">GCodeGen</a></li>
-          <li><a href="https://github.com/geniusparadox/cadviewer" target="_blank">CADViewer</a></li>
+        <div class="window-title">Projects</div>
+      </div>
+      <div class="window-content">
+        <h1>Projects</h1>
+        <p class="muted">Things I have created and am in the process of creating</p>
+        <ul>
+          <li>
+            <a href="https://geniusparadox.github.io/metal-weight-calculator/" target="_blank">
+              <div class="project-item">
+                <span class="project-name">MachinistsTools</span>
+                <span>→</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://mealmate.co" target="_blank">
+              <div class="project-item">
+                <span class="project-name">MealMate</span>
+                <span>→</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://geniusparadox.github.io/gcodegen/" target="_blank">
+              <div class="project-item">
+                <span class="project-name">GCodeGen</span>
+                <span>→</span>
+              </div>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/geniusparadox/cadviewer" target="_blank">
+              <div class="project-item">
+                <span class="project-name">CADViewer</span>
+                <span>→</span>
+              </div>
+            </a>
+          </li>
         </ul>
-      </section>
+      </div>
     </div>
-  </main>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 geniusparadox</p>
+    <!-- Blog Window -->
+    <div class="window" id="blog-window">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <div class="traffic-light close" onclick="closeWindow('blog-window')"></div>
+          <div class="traffic-light minimize"></div>
+          <div class="traffic-light maximize"></div>
+        </div>
+        <div class="window-title">Notes</div>
+      </div>
+      <div class="window-content">
+        <h1>Notes</h1>
+        <p class="muted">Thoughts, ideas, and everything in between.</p>
+        <ul>
+          <li>
+            <div class="blog-date">January 27, 2025</div>
+            <div class="blog-title">Welcome</div>
+            <p>This is a digital space for everything I need or want to say. More thoughts coming soon.</p>
+          </li>
+        </ul>
+      </div>
     </div>
-  </footer>
+  </div>
+
+  <!-- Dock -->
+  <div class="dock">
+    <div class="dock-item" onclick="openWindow('about-window')" title="About">
+      <span>👤</span>
+    </div>
+    <div class="dock-item" onclick="openWindow('projects-window')" title="Projects">
+      <span>📁</span>
+    </div>
+    <div class="dock-item" onclick="openWindow('blog-window')" title="Notes">
+      <span>📝</span>
+    </div>
+    <div class="dock-separator"></div>
+    <div class="dock-item" onclick="window.open('https://github.com/geniusparadox', '_blank')" title="GitHub">
+      <span>💻</span>
+    </div>
+  </div>
+
+  <script>
+    // Clock
+    function updateClock() {
+      const now = new Date();
+      const options = { weekday: 'short', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' };
+      document.getElementById('clock').textContent = now.toLocaleDateString('en-US', options);
+    }
+    updateClock();
+    setInterval(updateClock, 1000);
+
+    // Window management
+    let zIndex = 10;
+
+    function openWindow(id) {
+      const win = document.getElementById(id);
+      win.classList.add('active');
+      win.style.zIndex = ++zIndex;
+    }
+
+    function closeWindow(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+
+    // Bring window to front on click
+    document.querySelectorAll('.window').forEach(win => {
+      win.addEventListener('mousedown', () => {
+        win.style.zIndex = ++zIndex;
+      });
+    });
+  </script>
 </body>
 </html>
