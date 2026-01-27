@@ -88,6 +88,22 @@
       </div>
     </div>
 
+    <!-- Twitter Window -->
+    <div class="window" id="twitter-window">
+      <div class="window-titlebar">
+        <div class="traffic-lights">
+          <div class="traffic-light close" onclick="closeWindow('twitter-window')"></div>
+          <div class="traffic-light minimize"></div>
+          <div class="traffic-light maximize"></div>
+        </div>
+        <div class="window-title">Twitter</div>
+      </div>
+      <div class="window-content twitter-content">
+        <a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/geniusparadox">Tweets by @geniusparadox</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </div>
+
     <!-- Blog Window -->
     <div class="window" id="blog-window">
       <div class="window-titlebar">
@@ -122,6 +138,9 @@
     </div>
     <div class="dock-item" onclick="openWindow('blog-window')" title="Notes">
       <span>📝</span>
+    </div>
+    <div class="dock-item" onclick="openWindow('twitter-window')" title="Twitter">
+      <span>🐦</span>
     </div>
   </div>
 

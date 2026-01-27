@@ -285,6 +285,16 @@ body {
   left: calc(50% - 280px);
 }
 
+#twitter-window {
+  top: 70px;
+  left: calc(50% - 200px);
+}
+
+.twitter-content {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
 /* Mobile */
 @media (max-width: 640px) {
   .menubar {
