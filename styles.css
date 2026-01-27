@@ -101,7 +101,12 @@ body {
   align-items: center;
   gap: 8px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  cursor: default;
+  cursor: grab;
+  user-select: none;
+}
+
+.window-titlebar:active {
+  cursor: grabbing;
 }
 
 .traffic-lights {
