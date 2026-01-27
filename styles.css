@@ -604,3 +604,34 @@ body {
     display: none;
   }
 }
+
+/* Mobile Landscape */
+@media (max-width: 900px) and (orientation: landscape) {
+  body {
+    overflow: auto;
+    min-height: auto;
+  }
+
+  .desktop {
+    position: relative;
+    top: 0;
+    bottom: auto;
+    min-height: calc(100vh - 28px);
+    padding: 20px 0 100px;
+  }
+
+  .window {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0 auto;
+    width: 90% !important;
+    max-width: 500px !important;
+  }
+
+  .dock {
+    position: fixed;
+  }
+}
