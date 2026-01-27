@@ -16,7 +16,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background: url('https://images.unsplash.com/photo-1516490701099-7c7ba9a23d5c?w=1920&q=80') center/cover fixed;
   min-height: 100vh;
   overflow: hidden;
   color: var(--text);
