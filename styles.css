@@ -542,17 +542,49 @@ body {
 /* Mobile */
 @media (max-width: 640px) {
   .menubar {
-    font-size: 12px;
+    font-size: 11px;
+    padding: 0 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menubar-left {
+    gap: 12px;
+  }
+
+  .menubar-item {
+    padding: 2px 6px;
+    white-space: nowrap;
+  }
+
+  .menubar-app {
+    font-size: 11px;
   }
 
   .window {
-    min-width: calc(100% - 20px);
-    max-width: calc(100% - 20px);
-    left: 10px !important;
-    right: 10px;
-    top: 50px !important;
-    max-height: calc(100vh - 140px);
-    transform: none !important;
+    min-width: auto !important;
+    max-width: 75% !important;
+    width: auto !important;
+    left: 50% !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: 120px !important;
+    transform: translateX(-50%) !important;
+    max-height: none;
+  }
+
+  .window-content {
+    padding: 16px;
+  }
+
+  .window-content h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .window-content p {
+    font-size: 13px;
+    margin-bottom: 8px;
   }
 
   .dock-item {
