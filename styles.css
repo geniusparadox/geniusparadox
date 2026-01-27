@@ -19,7 +19,7 @@
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-  background: url('desktop2.jpg') top center/cover fixed;
+  background: url('desktop1.jpg') center/cover fixed;
   min-height: 100vh;
   overflow: hidden;
   color: var(--text);
