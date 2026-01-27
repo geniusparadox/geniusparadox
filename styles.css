@@ -61,11 +61,15 @@ body {
 
 .menubar-item {
   opacity: 0.85;
-  cursor: default;
+  cursor: pointer;
+  padding: 2px 10px;
+  border-radius: 4px;
+  transition: background 0.15s ease;
 }
 
 .menubar-item:hover {
   opacity: 1;
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .menubar-right {
