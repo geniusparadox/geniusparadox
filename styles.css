@@ -45,20 +45,39 @@ body {
 .menubar-left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 .apple-logo {
-  font-size: 16px;
-  opacity: 0.8;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.menubar-app {
+  font-weight: 600;
+}
+
+.menubar-item {
+  opacity: 0.85;
+  cursor: default;
+}
+
+.menubar-item:hover {
+  opacity: 1;
 }
 
 .menubar-right {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   font-size: 12px;
   color: var(--text);
+}
+
+.menubar-icon {
+  font-family: "SF Pro Display", -apple-system, system-ui;
+  font-size: 14px;
+  opacity: 0.85;
 }
 
 /* Desktop */
