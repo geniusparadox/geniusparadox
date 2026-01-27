@@ -544,16 +544,14 @@ body {
   .menubar {
     font-size: 11px;
     padding: 0 10px;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
   }
 
   .menubar-left {
-    gap: 12px;
+    gap: 10px;
   }
 
   .menubar-item {
-    padding: 2px 6px;
+    padding: 2px 5px;
     white-space: nowrap;
   }
 
@@ -561,15 +559,19 @@ body {
     font-size: 11px;
   }
 
+  .menubar-right {
+    display: none;
+  }
+
   .window {
     min-width: auto !important;
-    max-width: 75% !important;
+    max-width: 85% !important;
     width: auto !important;
     left: 50% !important;
     right: auto !important;
-    top: auto !important;
-    bottom: 120px !important;
-    transform: translateX(-50%) !important;
+    top: 50% !important;
+    bottom: auto !important;
+    transform: translate(-50%, -50%) !important;
     max-height: none;
   }
 
