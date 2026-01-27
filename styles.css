@@ -617,7 +617,7 @@ body {
     top: 0;
     bottom: auto;
     min-height: calc(100vh - 28px);
-    padding: 20px 0 100px;
+    padding: 10px 0 80px;
   }
 
   .window {
@@ -627,8 +627,36 @@ body {
     left: auto !important;
     transform: none !important;
     margin: 0 auto;
-    width: 90% !important;
-    max-width: 500px !important;
+    width: 250px !important;
+    max-width: 250px !important;
+    min-width: auto !important;
+  }
+
+  .window-content {
+    padding: 12px;
+  }
+
+  .window-content h1 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .window-content p {
+    font-size: 11px;
+    margin-bottom: 6px;
+  }
+
+  .window-titlebar {
+    padding: 8px 10px;
+  }
+
+  .traffic-light {
+    width: 10px;
+    height: 10px;
+  }
+
+  .window-title {
+    font-size: 11px;
   }
 
   .dock {
